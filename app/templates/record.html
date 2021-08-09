@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Update or Delete Record
+</h1>
+
+<form method="POST" action="/list/{{phone_number}}">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-10">
+                    <div class="input-group mb-3">
+                        <div class="col-10">
+                            <span class="input-group-text" id="name">{{ info.company }}</span>
+                            <textarea class="form-control" id="company_name" name="company_name" placeholder="e.g. Google" maxlength="280" value="{{ company_name }}"></textarea>
+                        </div>
+                        <div class="col-10">
+                            <span class="input-group-text" id="email">{{ info.email }}</span>
+                            <textarea class="form-control" id="company_email" name="company_email" placeholder="e.g. name@address.com" maxlength="280" value="{{ company_email }}"></textarea>
+                        </div>
+                        <div class="col-10">
+                            <span class="input-group-text" id="number">{{ info.phone_number }}</span>
+                            <textarea class="form-control" id="company_number" name="company_number" placeholder="e.g. 5555555555 (max 10 char. numbers only)" maxlength="10" value="{{ company_number }}"></textarea>
+                        </div>
+                        <div class="col-10">
+                            <span class="input-group-text" id="address">{{ info.address }}</span>
+                            <textarea class="form-control" id="company_address" name="company_address" placeholder="e.g. 100 South Street" maxlength="280" value="{{ company_address }}"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-grid gap-2">
+                    <div class="btn-group" role="group" aria-label="buttons">
+                        <button type="submit" class="btn btn-primary" name="action" value="update">Update</button>
+                        <button type="submit" class="btn btn-primary" name="action" value="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

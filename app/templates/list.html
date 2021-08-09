@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Company Phone Book
+</h1>
+
+{% for company in companies %}
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{ company.company }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ company.address }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{ company.phone_number }}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{ company.email }}</h6>
+    <a href="/list/{{company.phone_number}}" class="btn btn-primary">Update Record</a>
+  </div>
+</div>
+    {% endfor %}
+{% endblock %}
